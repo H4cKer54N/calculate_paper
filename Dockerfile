@@ -1,6 +1,9 @@
 # Stage 1: init
 FROM python:3.11 as init
 
+# Install python3-venv
+RUN apt-get update && apt-get install -y python3.11-venv
+
 # Copy local context to `/app` inside container (see .dockerignore)
 WORKDIR /app
 COPY . .
